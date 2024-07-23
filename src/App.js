@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Card from './Card';
 
 // 카드 데이터를 배열로 정의합니다.
 const cardsData = [
@@ -27,11 +28,11 @@ function App() {
       <div className="card-container">
         {filteredCards.length > 0 ? (
           filteredCards.map(card => (
-            <div key={card.id} className="card">
-              <h2>{card.name}</h2>
-              <p>Age: {card.age}</p>
-              <p>Profession: {card.profession}</p>
-            </div>
+            <Card
+            key = {card.id}
+            name ={card.name}
+            age ={card.age}
+            profession = {card.profession} />
           ))
         ) : (
           <p>No cards available</p>
